@@ -5,7 +5,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="navbar bg-base-100 border-b py-4 px-6 flex items-center justify-between h-[64px]">
+    <div className="navbar bg-base-100 border-b py-4 px-6 flex items-center justify-between h-[168px] fixed top-0 left-0 w-full">
       {/* Logo */}
       <div className="flex-1">
         <a href="/" className="text-2xl font-bold">

@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <>
       {/* Desktop Footer */}
-      <footer className="hidden lg:block bg-base-200 text-base-content mt-10 border-t">
+      <footer className="hidden lg:block bg-base-200 text-base-content mt-10 border-t fixed bottom-0 left-0 w-full">
         <div className="container mx-auto py-2 flex flex-col md:flex-row justify-between gap-8">
           {/* Bloc gauche */}
           <div>
