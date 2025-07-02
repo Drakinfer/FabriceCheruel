@@ -25,10 +25,6 @@ export default function HomeSection2({ onScrollUp }) {
         <ChevronUpIcon className="h-6 w-6 text-black animate-bounce" />
       </button>
 
-      <h2 className="absolute top-6 text-2xl font-semibold mb-8 mt-16">
-        Ma dernière création
-      </h2>
-
       {product && (
         <div className="flex flex-col md:flex-row items-center justify-between gap-16 max-w-6xl w-full">
           {/* Colonne image + texte */}

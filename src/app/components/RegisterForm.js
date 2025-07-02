@@ -37,7 +37,6 @@ export default function RegisterForm() {
         Créer un compte
       </h2>
 
-      {/* Flash message */}
       {message && (
         <div className="mb-4 text-center text-white bg-black px-4 py-2 rounded-full mb-5">
           {message}

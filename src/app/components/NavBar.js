@@ -9,7 +9,7 @@ export default function Navbar() {
   const { data: session } = useSession();
 
   return (
-    <div className="navbar bg-base-100 border-b py-4 px-6 flex items-center justify-between h-[168px] fixed top-0 left-0 w-full z-50">
+    <div className="navbar bg-base-100 border-b py-4 px-6 flex items-center justify-between lg:h-[168px] h-[120px] fixed top-0 left-0 w-full z-50">
       {/* Logo */}
       <div className="flex-1">
         <Link href="/" className="text-2xl font-bold">

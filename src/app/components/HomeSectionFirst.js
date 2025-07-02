@@ -4,9 +4,8 @@ import Image from 'next/image';
 
 export default function HomeSection1({ onScrollDown }) {
   return (
-    <section className="h-full w-full flex items-center justify-center relative px-12">
-      <div className="flex w-full max-w-7xl items-center justify-between gap-12">
-        {/* Image */}
+    <section className="h-full w-full flex  items-center justify-center relative px-12">
+      <div className="flex flex-col md:flex-row w-full max-w-7xl items-center justify-between gap-12">
         <div className="basis-[60%]">
           <Image
             src="/accueil.jpg"
@@ -19,7 +18,7 @@ export default function HomeSection1({ onScrollDown }) {
         </div>
 
         {/* Texte */}
-        <div className="basis-[30%] text-2xl leading-relaxed text-left">
+        <div className="basis-[30%] lg:text-2xl leading-relaxed text-left">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad
             minim veniam, quis nostrud exercitation ullamco laboris nisi ut
