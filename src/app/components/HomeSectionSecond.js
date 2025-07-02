@@ -2,7 +2,7 @@
 import { ChevronUpIcon } from '@heroicons/react/24/solid';
 import { CldImage } from 'next-cloudinary';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import Button from './Button';
 
 export default function HomeSection2({ onScrollUp }) {
   const [product, setProduct] = useState(null);
@@ -48,15 +48,7 @@ export default function HomeSection2({ onScrollUp }) {
             </p>
           </div>
 
-          {/* Bouton à droite */}
-          <div className="w-full md:w-1/3 flex justify-center md:justify-end">
-            <Link
-              href="/galerie"
-              className="btn bg-black text-white px-6 py-2 h-[50px] w-[200px] rounded-full flex items-center justify-center text-lg"
-            >
-              Voir mes œuvres
-            </Link>
-          </div>
+          <Button href="/galerie">Voir mes œuvres</Button>
         </div>
       )}
     </section>
