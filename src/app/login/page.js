@@ -8,7 +8,7 @@ export default function LoginPage() {
     <div className="h-full flex flex-col items-center justify-center">
       <LoginForm />
       <p className="mt-4 text-center text-sm">
-        Pas de compte ? <Button href="/register">S'inscrire</Button>
+        Pas de compte ? <Button href="/register">S&apos;inscrire</Button>
       </p>
     </div>
   );

@@ -68,7 +68,7 @@ export default function RegisterForm() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <Button type="submit">S’inscrire</Button>
+        <Button type="submit">S&apos;inscrire</Button>
       </form>
     </div>
   );

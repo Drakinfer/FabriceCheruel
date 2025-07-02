@@ -46,7 +46,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/cgu" className="link link-hover">
-                  Conditions d'utilisation
+                  Conditions d&apos;utilisation
                 </a>
               </li>
             </ul>
@@ -104,7 +104,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="/cgu">Conditions d'utilisation</a>
+                  <a href="/cgu">Conditions d&apos;utilisation</a>
                 </li>
               </ul>
 
