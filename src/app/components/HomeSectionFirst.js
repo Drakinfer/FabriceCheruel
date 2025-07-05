@@ -4,21 +4,21 @@ import Image from 'next/image';
 
 export default function HomeSection1({ onScrollDown }) {
   return (
-    <section className="h-full w-full flex  items-center justify-center relative px-12">
-      <div className="flex flex-col md:flex-row w-full max-w-7xl items-center justify-between gap-12">
-        <div className="basis-[60%]">
+    <section className="w-full h-full flex items-center justify-center relative px-6 sm:px-12">
+      <div className="h-full flex flex-col md:flex-row w-full max-w-7xl items-center justify-between gap-24">
+        {/* Image */}
+        <div className="md:h-[80%] relative w-full md:w-2/3 aspect-[4/3] md:aspect-auto overflow-hidden rounded shadow">
           <Image
             src="/accueil.jpg"
             alt="Œuvre d'art"
-            width={800} // largeur réelle
-            height={600} // hauteur réelle
-            className="object-cover rounded shadow w-full h-auto"
+            fill
+            className="object-cover"
             priority
           />
         </div>
 
         {/* Texte */}
-        <div className="basis-[30%] lg:text-2xl leading-relaxed text-left">
+        <div className="w-full md:w-1/3 text-left leading-relaxed">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad
             minim veniam, quis nostrud exercitation ullamco laboris nisi ut

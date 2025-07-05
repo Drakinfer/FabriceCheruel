@@ -43,7 +43,10 @@ export default function RegisterForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 justify-center items-center"
+      >
         <input
           type="text"
           placeholder="Nom"

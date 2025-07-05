@@ -5,7 +5,6 @@ export default function Footer() {
   const [open, setOpen] = useState(false);
   const dropupRef = useRef(null);
 
-  // Fermer si clic en-dehors
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropupRef.current && !dropupRef.current.contains(event.target)) {
@@ -24,10 +23,8 @@ export default function Footer() {
 
   return (
     <>
-      {/* Desktop Footer */}
-      <footer className="hidden lg:block bg-base-200 text-base-content mt-10 border-t fixed bottom-0 left-0 w-full">
-        <div className="container mx-auto py-2 flex flex-col md:flex-row justify-between gap-8">
-          {/* Bloc gauche */}
+      <footer className="hidden lg:block bg-base-200 text-base-content border-t fixed bottom-0 left-0 w-full">
+        <div className="container mx-auto py-2 px-4 flex flex-col justify-between md:flex-row gap-8">
           <div>
             <h2 className="text-lg font-semibold mb-2">Informations légales</h2>
             <ul className="space-y-1 text-sm">
@@ -52,7 +49,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Bloc centre */}
           <div>
             <h2 className="text-lg font-semibold mb-2">Contact</h2>
             <ul className="space-y-1 text-sm">
@@ -77,7 +73,10 @@ export default function Footer() {
       </footer>
 
       {/* Mobile dropup footer */}
-      <div className="lg:hidden fixed bottom-4 right-4 z-50" ref={dropupRef}>
+      <div
+        className="lg:hidden fixed bottom-6 mb-5 right-4 z-50"
+        ref={dropupRef}
+      >
         <div className="dropdown dropdown-top dropdown-end relative">
           <button
             tabIndex={0}

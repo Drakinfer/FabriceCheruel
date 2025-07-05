@@ -24,16 +24,15 @@ export default function HomeSection2({ onScrollUp }) {
       >
         <ChevronUpIcon className="h-6 w-6 text-black animate-bounce" />
       </button>
-
+      <h2 className="pt-15 text-3xl font-semibold">Ma dernière création</h2>
       {product && (
-        <div className="flex flex-col md:flex-row items-center justify-between gap-16 max-w-6xl w-full">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-16 max-w-6xl w-full h-full">
           {/* Colonne image + texte */}
-          <div className="flex flex-col items-start gap-4 w-full md:w-2/3">
+          <div className="flex flex-col justify-center h-full items-center gap-4 w-full md:w-2/3">
             <div className="relative w-full aspect-[4/3] max-w-md border border-black rounded overflow-hidden">
               <CldImage
                 src={product.images[0]}
-                width="1200"
-                height="750"
+                fill
                 alt={product.description}
                 className="object-cover"
               />
