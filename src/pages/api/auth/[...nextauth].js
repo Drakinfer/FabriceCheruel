@@ -33,11 +33,17 @@ export const authOptions = {
   session: { strategy: 'jwt' },
   callbacks: {
     async jwt({ token, user }) {
-      if (user) token.id = user.id;
+      if (user) {
+        token.id = user.id;
+        token.role = user.role; // 👈 ajout du rôle dans le token
+      }
       return token;
     },
     async session({ session, token }) {
-      if (token) session.user.id = token.id;
+      if (token) {
+        session.user.id = token.id;
+        session.user.role = token.role; // 👈 ajout du rôle dans la session
+      }
       return session;
     },
   },

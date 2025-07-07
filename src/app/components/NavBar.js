@@ -7,9 +7,12 @@ import { PowerIcon, UserIcon } from '@heroicons/react/24/solid';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { data: session } = useSession();
+  const [showAdminMenu, setShowAdminMenu] = useState(false);
+
+  const isAdmin = session?.user?.role === 'ADMIN';
 
   return (
-    <div className="navbar border-b py-4 px-6 flex items-center justify-between h-[65px] fixed top-0 left-0 w-full z-50">
+    <div className="navbar border-b py-4 bg-white px-6 flex items-center justify-between h-[65px] fixed top-0 left-0 w-full z-50">
       {/* Logo */}
       <div className="flex-1">
         <Link href="/" className="text-2xl font-bold">
@@ -32,6 +35,24 @@ export default function Navbar() {
           <li>
             <Link href="/forum">Forum</Link>
           </li>
+          {isAdmin && (
+            <div className="relative">
+              <li
+                onClick={() => setShowAdminMenu(!showAdminMenu)}
+                className="btn btn-ghost"
+              >
+                Administration
+              </li>
+
+              {showAdminMenu && (
+                <ul className="menu absolute bg-white rounded mt-4 z-30 p-1 border">
+                  <li>
+                    <Link href="/admin/oeuvres">Œuvres</Link>
+                  </li>
+                </ul>
+              )}
+            </div>
+          )}
         </ul>
 
         {session ? (
@@ -69,7 +90,7 @@ export default function Navbar() {
         </button>
 
         {isOpen && (
-          <ul className="absolute right-0 top-[50px] z-50 bg-base-100 shadow rounded w-48 p-2 space-y-2">
+          <ul className="absolute right-0 top-[50px] z-50 bg-white shadow rounded w-48 p-2 space-y-2">
             <li>
               <Link href="/galerie" onClick={() => setIsOpen(false)}>
                 Galerie
@@ -90,6 +111,26 @@ export default function Navbar() {
                 Forum
               </Link>
             </li>
+            {isAdmin && (
+              <li
+                onClick={() => setShowAdminMenu(!showAdminMenu)}
+                className="w-full text-left"
+              >
+                Administration ▾
+                {showAdminMenu && (
+                  <ul className="ml-4 mt-1 space-y-1">
+                    <li>
+                      <Link
+                        href="/admin/oeuvres"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Œuvres
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+            )}
             {session ? (
               <li>
                 <button
