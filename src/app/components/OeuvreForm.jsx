@@ -7,11 +7,12 @@ import ImageUploader from './ImageUploader';
 import Button from './Button';
 
 export default function OeuvreForm({ onSuccess, initialData = {} }) {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [imageUrls, setImageUrls] = useState([]);
+  const [name, setName] = useState(initialData?.name || '');
+  const [description, setDescription] = useState(initialData?.description || '');
+  const [imageUrls, setImageUrls] = useState(initialData?.images || []);
+  const [categoryId, setCategoryId] = useState(initialData?.categoryId || '');
   const [categories, setCategories] = useState([]);
-  const [categoryId, setCategoryId] = useState('');
+
 
   const fetchCategories = async () => {
     try {
@@ -26,15 +27,6 @@ export default function OeuvreForm({ onSuccess, initialData = {} }) {
   useEffect(() => {
     fetchCategories();
   }, []);
-
-  useEffect(() => {
-  if (initialData) {
-    setName(initialData.name);
-    setDescription(initialData.description);
-    setImageUrls(initialData.images);
-    setCategoryId(initialData.categoryId);
-  }
-}, [initialData]);
 
   const handleSubmit = async (e) => {
   e.preventDefault();
@@ -112,7 +104,7 @@ const handleDeleteImage = async (url) => {
 
       <ImageUploader onUpload={(urls) => setImageUrls(urls)} />
 
-      {imageUrls.length > 0 && (
+      {Array.isArray(imageUrls) && imageUrls.length > 0 && (
   <div className="flex flex-wrap gap-2 mt-2">
     {imageUrls.map((url, idx) => (
       <div key={idx} className="relative w-20 h-20">
@@ -122,12 +114,12 @@ const handleDeleteImage = async (url) => {
           className="object-cover w-full h-full rounded border"
         />
         <button
-  type="button"
-  className="absolute top-0 right-0 bg-white text-red-500 text-xs px-1 rounded-full"
-  onClick={() => handleDeleteImage(url)}
->
-  ×
-</button>
+          type="button"
+          className="absolute top-0 right-0 bg-white text-red-500 text-xs px-1 rounded-full"
+          onClick={() => handleDeleteImage(url)}
+        >
+          ×
+        </button>
       </div>
     ))}
   </div>
