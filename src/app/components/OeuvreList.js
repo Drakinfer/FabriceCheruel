@@ -6,8 +6,15 @@ import { PencilIcon, TrashIcon } from '@heroicons/react/24/solid';
 import ConfirmModal from './ConfirmModal';
 import Modal from './Modal';
 import OeuvreForm from './OeuvreForm';
+import Link from 'next/link';
 
-export default function OeuvreList({ oeuvres, isAdmin, onDelete, onSuccess }) {
+export default function OeuvreList({
+  oeuvres,
+  isAdmin,
+  onDelete,
+  onSuccess,
+  showLinkBase = '',
+}) {
   const [modalOpen, setModalOpen] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
@@ -51,21 +58,26 @@ export default function OeuvreList({ oeuvres, isAdmin, onDelete, onSuccess }) {
       {(oeuvres || []).map((oeuvre) => (
         <div
           key={oeuvre.id}
-          className="flex flex-col sm:flex-row gap-4 border rounded shadow p-4 items-start relative"
+          className="flex flex-col sm:flex-row gap-4 border rounded items-start relative"
         >
-          <div className="w-full sm:w-[120px] aspect-square relative shrink-0 md:overflow-hidden rounded mx-auto sm:mx-0">
-            <Image
-              src={oeuvre.images[0]}
-              alt={oeuvre.name}
-              fill
-              className="object-cover"
-            />
-          </div>
+          <Link
+            href={`${showLinkBase}/${oeuvre.id}`}
+            className="flex flex-col sm:flex-row gap-4 rounded p-4 items-start relative w-full h-[170px]"
+          >
+            <div className="w-full sm:w-[120px] aspect-square relative shrink-0 md:overflow-hidden rounded mx-auto sm:mx-0">
+              <Image
+                src={oeuvre.images[0]}
+                alt={oeuvre.name}
+                fill
+                className="object-cover"
+              />
+            </div>
 
-          <div className="flex-1 w-full space-y-2">
-            <h2 className="text-lg font-bold">{oeuvre.name}</h2>
-            <p className="text-sm text-gray-700">{oeuvre.description}</p>
-          </div>
+            <div className="flex-1 w-full space-y-2">
+              <h2 className="text-lg font-bold">{oeuvre.name}</h2>
+              <p className="text-sm text-gray-700">{oeuvre.description}</p>
+            </div>
+          </Link>
           {isAdmin && (
             <div className="flex justify-center align-center gap-2 pt-2">
               <button
