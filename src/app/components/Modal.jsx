@@ -14,7 +14,7 @@ export default function Modal({ isOpen, onClose, title, children }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-40 h-[60%] w-[30%] border my-auto mx-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-40 h-[60%] lg:w-[50%] w-90% border my-auto mx-auto">
         <div className="modal-box relative overflow-hidden">
           {title && <h3 className="font-bold text-lg mb-4">{title}</h3>}
           {children}
