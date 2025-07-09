@@ -12,6 +12,9 @@ module.exports = {
     },
   },
   plugins: [require('daisyui')],
+  daisyui: {
+    themes: ['light'],
+  },
 
   safelist: [
     'h-[calc(100vh-234px)]',

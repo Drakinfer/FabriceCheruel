@@ -47,12 +47,12 @@ export default function OeuvresPage() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+    <div className="flex flex-col md:flex-row gap-6 justify-center items-center md:h-full">
       <div className="md:w-1/4">
         <OeuvreFilter filters={filters} onFilterChange={handleFilterChange} />
       </div>
 
-      <div className="md:w-3/4 flex flex-col gap-6">
+      <div className="md:w-3/4 flex flex-col gap-6 justify-center">
         <Pagination
           currentPage={currentPage}
           pageCount={totalPages}
