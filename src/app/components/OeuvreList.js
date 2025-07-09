@@ -58,11 +58,11 @@ export default function OeuvreList({
       {(oeuvres || []).map((oeuvre) => (
         <div
           key={oeuvre.id}
-          className="flex flex-col sm:flex-row gap-4 border rounded items-start relative"
+          className="flex flex-col sm:flex-row gap-4 border rounded items-start justify-center relative"
         >
           <Link
             href={`${showLinkBase}/${oeuvre.id}`}
-            className="flex flex-col sm:flex-row gap-4 rounded p-4 items-start relative w-full h-[170px]"
+            className="flex flex-col sm:flex-row gap-4 rounded px-4 py-1 items-center relative w-full min-h-[120px]"
           >
             <div className="w-full sm:w-[120px] aspect-square relative shrink-0 md:overflow-hidden rounded mx-auto sm:mx-0">
               <Image
