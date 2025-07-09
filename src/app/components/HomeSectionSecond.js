@@ -1,8 +1,8 @@
 'use client';
 import { ChevronUpIcon } from '@heroicons/react/24/solid';
-import { CldImage } from 'next-cloudinary';
 import { useEffect, useState } from 'react';
 import Button from './Button';
+import ProtectedImage from './ProtectedImage';
 
 export default function HomeSection2({ onScrollUp }) {
   const [product, setProduct] = useState(null);
@@ -30,11 +30,11 @@ export default function HomeSection2({ onScrollUp }) {
           {/* Colonne image + texte */}
           <div className="flex flex-col justify-center h-full items-center gap-4 w-full md:w-2/3">
             <div className="relative w-full aspect-[4/3] max-w-md border border-black rounded overflow-hidden">
-              <CldImage
+              <ProtectedImage
                 src={product.images[0]}
+                alt={product.name}
                 fill
-                alt={product.description}
-                className="object-cover"
+                containerClass="aspect-[4/3]"
               />
             </div>
 

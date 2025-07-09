@@ -4,6 +4,7 @@ import { useSession, signOut } from 'next-auth/react';
 import Link from 'next/link';
 import { PowerIcon, UserIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
+import ProtectedImage from './ProtectedImage';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,13 +17,11 @@ export default function Navbar() {
     <div className="navbar border-b py-4 bg-white px-6 flex items-center justify-between h-[65px] fixed top-0 left-0 w-full z-50">
       <div className="flex-1">
         <Link href="/">
-          <Image
+          <ProtectedImage
             src="/Logo.jpg"
-            alt="Fabrice Cheruel Logo, une abeille"
+            alt="Fabrice Cheruel Logo, dessin d'une abeille"
             width={100}
             height={100}
-            className="object-cover"
-            priority
           />
         </Link>
       </div>

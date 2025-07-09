@@ -1,19 +1,17 @@
 'use client';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import Image from 'next/image';
+import ProtectedImage from './ProtectedImage';
 
 export default function HomeSection1({ onScrollDown }) {
   return (
     <section className="w-full h-full flex items-center justify-center relative px-6 sm:px-12">
       <div className="h-full flex flex-col md:flex-row w-full max-w-7xl items-center justify-between gap-24">
-        {/* Image */}
         <div className="md:h-[80%] relative w-full md:w-2/3 aspect-[4/3] md:aspect-auto overflow-hidden rounded shadow">
-          <Image
+          <ProtectedImage
             src="/accueil.jpg"
-            alt="Œuvre d'art"
+            alt="Fabrice Cheruel"
             fill
-            className="object-cover"
-            priority
+            containerClass="aspect-[4/3]"
           />
         </div>
 

@@ -1,12 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
 import { PencilIcon, TrashIcon } from '@heroicons/react/24/solid';
 import ConfirmModal from './ConfirmModal';
 import Modal from './Modal';
 import OeuvreForm from './OeuvreForm';
 import Link from 'next/link';
+import ProtectedImage from './ProtectedImage';
 
 export default function OeuvreList({
   oeuvres,
@@ -65,11 +65,11 @@ export default function OeuvreList({
             className="flex flex-col sm:flex-row gap-4 rounded px-4 py-1 items-center relative w-full min-h-[120px]"
           >
             <div className="w-full sm:w-[120px] aspect-square relative shrink-0 md:overflow-hidden rounded mx-auto sm:mx-0">
-              <Image
+              <ProtectedImage
                 src={oeuvre.images[0]}
                 alt={oeuvre.name}
                 fill
-                className="object-cover"
+                containerClass="aspect-square"
               />
             </div>
 
