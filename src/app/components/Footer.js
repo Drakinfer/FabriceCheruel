@@ -23,7 +23,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="hidden lg:block bg-base-200 text-base-content border-t fixed bottom-0 left-0 w-full">
+      <footer className="hidden lg:block bg-white text-base-content border-t fixed bottom-0 left-0 w-full">
         <div className="container mx-auto py-2 px-4 flex flex-col justify-between md:flex-row gap-8">
           <div>
             <h2 className="text-lg font-semibold mb-2">Informations légales</h2>
@@ -53,7 +53,7 @@ export default function Footer() {
             <h2 className="text-lg font-semibold mb-2">Contact</h2>
             <ul className="space-y-1 text-sm">
               <li>
-                Email :{' '}
+                Email :
                 <a href="mailto:contact@monsite.com" className="link">
                   contact@monsite.com
                 </a>

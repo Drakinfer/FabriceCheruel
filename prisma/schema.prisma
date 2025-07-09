@@ -36,12 +36,13 @@ model Session {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  email     String   @unique
-  name      String?
-  password  String
-  role      Role     @default(USER)
+  id             Int      @id @default(autoincrement())
+  createdAt      DateTime @default(now())
+  email          String   @unique
+  name           String?
+  password       String
+  has_agreed_cgu Boolean  @default(false)
+  role           Role     @default(USER)
 
   accounts Account[]
   sessions Session[]

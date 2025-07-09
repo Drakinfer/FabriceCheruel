@@ -2,12 +2,16 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from './Button';
+import Modal from './Modal';
+import CGUContent from './CGUContent';
 
 export default function RegisterForm() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [agreed, setAgreed] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -16,7 +20,7 @@ export default function RegisterForm() {
     const res = await fetch('/api/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, name, password }),
+      body: JSON.stringify({ email, name, password, has_agreed_cgu: agreed }),
     });
 
     if (res.ok) {
@@ -71,8 +75,37 @@ export default function RegisterForm() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+        <div className="text-sm flex items-start gap-2">
+          <input
+            type="checkbox"
+            id="cgu"
+            checked={agreed}
+            onChange={(e) => setAgreed(e.target.checked)}
+            className="checkbox mt-1"
+            required
+          />
+          <label htmlFor="cgu">
+            J’accepte les{' '}
+            <button
+              type="button"
+              className="link link-primary"
+              onClick={() => setModalOpen(true)}
+            >
+              Conditions Générales d&apos;Utilisation
+            </button>
+          </label>
+        </div>
         <Button type="submit">S&apos;inscrire</Button>
       </form>
+      <Modal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title="Conditions Générales d’Utilisation"
+      >
+        <div className="max-h-[50vh] overflow-y-auto px-2 pr-4">
+          <CGUContent withPadding={false} />
+        </div>
+      </Modal>
     </div>
   );
 }
