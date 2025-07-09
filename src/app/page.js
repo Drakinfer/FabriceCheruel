@@ -13,7 +13,7 @@ export default function HomePage() {
           ${
             currentSection === 1
               ? 'opacity-100 pointer-events-auto z-20 translate-y-0'
-              : 'opacity-0 pointer-events-none z-10 -translate-y-full'
+              : 'opacity-0 pointer-events-none hidden -translate-y-full'
           }
         `}
       >
@@ -25,7 +25,7 @@ export default function HomePage() {
           ${
             currentSection === 2
               ? 'opacity-100 pointer-events-auto z-20 translate-y-0'
-              : 'opacity-0 pointer-events-none z-10 translate-y-full'
+              : 'opacity-0 pointer-events-none hidden translate-y-full'
           }
         `}
       >
