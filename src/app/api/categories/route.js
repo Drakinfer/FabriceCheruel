@@ -1,18 +1,32 @@
 import { prisma } from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 
-export async function GET() {
+export async function GET(req) {
+  const { searchParams } = new URL(req.url);
+
+  const limit = 5;
+
+  const rawPage = parseInt(searchParams.get('page'));
+  const page = isNaN(rawPage) || rawPage < 0 ? 0 : rawPage;
+  const skip = page * limit;
+
   try {
-    const categories = await prisma.category.findMany({
-      include: { products: true },
+    const [total, categories] = await Promise.all([
+      prisma.category.count(),
+      prisma.category.findMany({
+        skip,
+        take: limit,
+        orderBy: { name: 'asc' },
+      }),
+    ]);
+
+    return Response.json({
+      categories,
+      totalPages: Math.ceil(total / limit),
     });
-    return NextResponse.json(categories);
   } catch (error) {
-    console.error(error);
-    return NextResponse.json(
-      { error: 'Failed to fetch categories' },
-      { status: 500 },
-    );
+    console.error('Erreur dans la récupération des catégories :', error);
+    return new Response('Erreur serveur', { status: 500 });
   }
 }
 
@@ -29,25 +43,6 @@ export async function POST(req) {
     console.error(error);
     return NextResponse.json(
       { error: 'Failed to create category' },
-      { status: 500 },
-    );
-  }
-}
-
-export async function PUT(req) {
-  try {
-    const body = await req.json();
-    const updated = await prisma.category.update({
-      where: { id: body.id },
-      data: {
-        name: body.name,
-      },
-    });
-    return NextResponse.json(updated);
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json(
-      { error: 'Failed to update category' },
       { status: 500 },
     );
   }

@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useSession, signOut } from 'next-auth/react';
 import Link from 'next/link';
 import { PowerIcon, UserIcon } from '@heroicons/react/24/solid';
-import Image from 'next/image';
 import ProtectedImage from './ProtectedImage';
 
 export default function Navbar() {
@@ -54,6 +53,9 @@ export default function Navbar() {
                 <ul className="menu absolute bg-white rounded mt-4 z-30 p-1 border">
                   <li>
                     <Link href="/admin/oeuvres">Œuvres</Link>
+                  </li>
+                  <li>
+                    <Link href="/admin/categories">Catégories</Link>
                   </li>
                 </ul>
               )}
@@ -131,6 +133,14 @@ export default function Navbar() {
                         onClick={() => setIsOpen(false)}
                       >
                         Œuvres
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/admin/categories"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Catégories
                       </Link>
                     </li>
                   </ul>
