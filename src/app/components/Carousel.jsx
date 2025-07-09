@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import ProtectedImage from './ProtectedImage';
 import { useState } from 'react';
 
 export default function Carrousel({ images = [] }) {
@@ -17,12 +17,12 @@ export default function Carrousel({ images = [] }) {
   return (
     <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
       {images.length > 0 && (
-        <Image
-          src={images[current]}
-          alt={`Image ${current + 1}`}
-          fill
-          className="object-contain rounded"
-        />
+        <ProtectedImage
+                    src={images[current]}
+                    alt={`Image ${current + 1}`}
+                    fill
+                    containerClass="object-contain rounded sm:h-[400px] md:h-[500px]"
+                  />
       )}
 
       {images.length > 1 && (
