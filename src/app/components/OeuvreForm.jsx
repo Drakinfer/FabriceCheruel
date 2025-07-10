@@ -60,14 +60,6 @@ export default function OeuvreForm({ onSuccess, initialData = {} }) {
   }
 };
 
-
-  const getPublicIdFromUrl = (url) => {
-  const parts = url.split('/');
-  const filename = parts[parts.length - 1].split('.')[0];
-  const folder = parts[parts.length - 2];
-  return `${folder}/${filename}`;
-};
-
 const handleDeleteImage = async (url) => {
   const publicId = getPublicIdFromUrl(url);
 
