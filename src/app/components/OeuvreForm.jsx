@@ -18,7 +18,7 @@ export default function OeuvreForm({ onSuccess, initialData = {} }) {
     try {
       const res = await fetch('/api/categories');
       const data = await res.json();
-      setCategories(data);
+      setCategories(data.categories);
     } catch (error) {
       console.error('Erreur lors du chargement des catégories :', error);
     }
