@@ -72,14 +72,15 @@ model Category {
 }
 
 model Exposition {
-  id         Int      @id @default(autoincrement())
-  name       String
-  address    String
-  city       String
-  postalCode String
-  country    String
-  image      String
-  date       DateTime
+  id          Int      @id @default(autoincrement())
+  name        String
+  address     String
+  city        String
+  postalCode  String
+  country     String
+  image       String
+  date        DateTime
+  description String?
 }
 
 enum Role {

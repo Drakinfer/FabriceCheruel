@@ -26,17 +26,19 @@ export default function HomeSection1({ onScrollDown }) {
             <span className="font-bold">
               Bienvenue dans mon univers artistique
             </span>
-            <p>
-              Plongez dans l&apos;univers de la création avec cet atelier
-              artistique qui combine trois formes d&apos;expression
-              complémentaires : le dessin, la sculpture et le vitrail.
-            </p>
-            <p>
-              Cet espace de découverte permet d&apos;explorer et d&apos;échanger
-              sur différentes techniques de dessin (crayon, fusain, encre,
-              acrylique...) ainsi que le travail du volume, de la lumière à
-              travers la sculpture et le verre (vitrail).
-            </p>
+          </p>
+          <p>
+            Plongez dans l&apos;univers de la création avec cet atelier
+            artistique qui combine trois formes d&apos;expression
+            complémentaires : le dessin, la sculpture et le vitrail.
+          </p>
+          <p>
+            Cet espace de découverte permet d&apos;explorer et d&apos;échanger
+            sur différentes techniques de dessin (crayon, fusain, encre,
+            acrylique...) ainsi que le travail du volume, de la lumière à
+            travers la sculpture et le verre (vitrail).
+          </p>
+          <p>
             Je vous donne rendez-vous dans un monde où chaque trait, chaque
             courbe, chaque volume raconte un voyage. À travers mes
             illustrations, dessins ,sculptures et vitraux , je cherche à

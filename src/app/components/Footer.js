@@ -24,23 +24,10 @@ export default function Footer() {
   return (
     <>
       <footer className="hidden lg:block bg-white text-base-content border-t fixed bottom-0 left-0 w-full">
-        <div className="container mx-auto py-2 px-4 flex flex-col justify-between md:flex-row gap-8">
+        <div className="container mx-auto py-2 px-1 flex flex-col justify-between md:flex-row gap-8">
           <div>
             <h2 className="text-lg font-semibold mb-2">Informations légales</h2>
             <ul className="space-y-1 text-sm">
-              <li>
-                <a href="/mentions-legales" className="link link-hover">
-                  Mentions légales
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/politique-confidentialite"
-                  className="link link-hover"
-                >
-                  Politique de confidentialité
-                </a>
-              </li>
               <li>
                 <a href="/cgu" className="link link-hover">
                   Conditions d&apos;utilisation
@@ -67,8 +54,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="text-center text-xs p-4 bg-base-300">
+        <div className="text-center text-xs p-1 bg-base-300">
           © {new Date().getFullYear()} Fabrice Cheruel. Tous droits réservés.
+          Site développé par Alexis CHAUVEAU
         </div>
       </footer>
 
@@ -95,14 +83,6 @@ export default function Footer() {
               <p className="font-bold mb-2">Informations légales</p>
               <ul className="mb-3 space-y-1">
                 <li>
-                  <a href="/mentions-legales">Mentions légales</a>
-                </li>
-                <li>
-                  <a href="/politique-confidentialite">
-                    Politique de confidentialité
-                  </a>
-                </li>
-                <li>
                   <a href="/cgu">Conditions d&apos;utilisation</a>
                 </li>
               </ul>
@@ -110,7 +90,9 @@ export default function Footer() {
               <p className="font-bold mb-2">Contact</p>
               <ul className="mb-3 space-y-1">
                 <li>
-                  <a href="mailto:contact@monsite.com">contact@monsite.com</a>
+                  <a href="mailto:contact@monsite.com">
+                    fabrice.cheruel@gmail.com
+                  </a>
                 </li>
                 <li>
                   <a href="/contact">Formulaire de contact</a>
@@ -118,7 +100,8 @@ export default function Footer() {
               </ul>
 
               <p className="text-center text-xs mt-4">
-                © {new Date().getFullYear()} Fabrice Cheruel
+                © {new Date().getFullYear()} Fabrice Cheruel - Site développé
+                par Alexis CHAUVEAU
               </p>
             </div>
           )}

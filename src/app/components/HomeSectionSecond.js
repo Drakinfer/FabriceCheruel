@@ -3,6 +3,7 @@ import { ChevronUpIcon } from '@heroicons/react/24/solid';
 import { useEffect, useState } from 'react';
 import Button from './Button';
 import ProtectedImage from './ProtectedImage';
+import Link from 'next/link';
 
 export default function HomeSection2({ onScrollUp }) {
   const [product, setProduct] = useState(null);
@@ -29,18 +30,20 @@ export default function HomeSection2({ onScrollUp }) {
         <div className="flex flex-col md:flex-row items-center justify-between gap-16 max-w-6xl w-full h-full">
           {/* Colonne image + texte */}
           <div className="flex flex-col justify-center h-full items-center gap-4 w-full md:w-2/3">
-            <div className="relative w-full aspect-[4/3] max-w-md border border-black rounded overflow-hidden">
-              <ProtectedImage
-                src={product.images[0]}
-                alt={product.name}
-                fill
-                containerClass="aspect-[4/3]"
-              />
-            </div>
+            <Link href={`galerie/${product.id}`} className="w-full">
+              <div className="relative w-full aspect-[4/3] max-w-md border border-black rounded overflow-hidden">
+                <ProtectedImage
+                  src={product.images[0]}
+                  alt={product.name}
+                  fill
+                  containerClass="aspect-[4/3]"
+                />
+              </div>
 
-            <p className="text-base leading-relaxed text-left text-lg">
-              {product.description}
-            </p>
+              <p className="text-base leading-relaxed text-lg">
+                {product.name}
+              </p>
+            </Link>
           </div>
 
           <Button href="/galerie">Voir mes œuvres</Button>

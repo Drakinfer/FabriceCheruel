@@ -71,7 +71,6 @@ export default function OeuvresPage() {
 
   return (
     <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-      {/* Colonne Filtres */}
       <div className="md:w-1/4">
         <Button onClick={() => setIsModalOpen(true)} className="mb-4">
           Ajouter une oeuvre
@@ -79,7 +78,6 @@ export default function OeuvresPage() {
         <OeuvreFilter filters={filters} onFilterChange={handleFilterChange} />
       </div>
 
-      {/* Colonne Liste + Pagination */}
       <div className="md:w-3/4 flex flex-col gap-6">
         <Pagination
           currentPage={currentPage}

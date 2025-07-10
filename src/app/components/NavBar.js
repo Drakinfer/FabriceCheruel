@@ -32,7 +32,7 @@ export default function Navbar() {
             <Link href="/galerie">Galerie</Link>
           </li>
           <li>
-            <Link href="/expos">Expos</Link>
+            <Link href="/expositions">Expos</Link>
           </li>
           <li>
             <Link href="/contact">Contact</Link>
@@ -52,10 +52,28 @@ export default function Navbar() {
               {showAdminMenu && (
                 <ul className="menu absolute bg-white rounded mt-4 z-30 p-1 border">
                   <li>
-                    <Link href="/admin/oeuvres">Œuvres</Link>
+                    <Link
+                      href="/admin/oeuvres"
+                      onClick={() => setShowAdminMenu(!showAdminMenu)}
+                    >
+                      Œuvres
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/admin/categories">Catégories</Link>
+                    <Link
+                      href="/admin/categories"
+                      onClick={() => setShowAdminMenu(!showAdminMenu)}
+                    >
+                      Catégories
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/admin/expositions"
+                      onClick={() => setShowAdminMenu(!showAdminMenu)}
+                    >
+                      Expositions
+                    </Link>
                   </li>
                 </ul>
               )}
@@ -105,7 +123,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/expos" onClick={() => setIsOpen(false)}>
+              <Link href="/expositions" onClick={() => setIsOpen(false)}>
                 Expos
               </Link>
             </li>
@@ -141,6 +159,14 @@ export default function Navbar() {
                         onClick={() => setIsOpen(false)}
                       >
                         Catégories
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/admin/expositions"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Expositions
                       </Link>
                     </li>
                   </ul>
