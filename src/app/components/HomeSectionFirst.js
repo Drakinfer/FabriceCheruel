@@ -45,9 +45,10 @@ export default function HomeSection1({ onScrollDown }) {
           </p>
           <p>
             Ce site est une galerie vivante de mes créations – un espace où
-            l'art visuel prend forme. Explorez mes projets, suivez le processus
-            créatif, et laissez-vous emporter par l&apos;énergie du trait de
-            dessins, des mélanges de couleurs dans la lumière . Bonne visite!
+            l&apos;art visuel prend forme. Explorez mes projets, suivez le
+            processus créatif, et laissez-vous emporter par l&apos;énergie du
+            trait de dessins, des mélanges de couleurs dans la lumière . Bonne
+            visite!
           </p>
         </div>
       </div>
