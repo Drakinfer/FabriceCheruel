@@ -92,6 +92,7 @@ export default function OeuvresPage() {
           isLoading={isLoading}
           onDelete={handleDelete}
           onSuccess={handleSuccess}
+          showLinkBase="../galerie/"
         />
       </div>
 
