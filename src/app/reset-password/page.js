@@ -1,9 +1,11 @@
 'use client';
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 export default function ResetPasswordPage() {
   const searchParams = useSearchParams();
+
   const token = searchParams.get('token');
 
   const [password, setPassword] = useState('');
@@ -26,18 +28,20 @@ export default function ResetPasswordPage() {
   };
 
   return (
-    <form onSubmit={handleReset} className="max-w-md mx-auto mt-10 space-y-4">
-      <h2 className="text-xl font-bold text-center">Nouveau mot de passe</h2>
-      <input
-        type="password"
-        placeholder="Nouveau mot de passe"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="input input-bordered w-full"
-        required
-      />
-      <button className="btn btn-primary w-full">Réinitialiser</button>
-      {message && <p className="text-center mt-2">{message}</p>}
-    </form>
+    <Suspense>
+      <form onSubmit={handleReset} className="max-w-md mx-auto mt-10 space-y-4">
+        <h2 className="text-xl font-bold text-center">Nouveau mot de passe</h2>
+        <input
+          type="password"
+          placeholder="Nouveau mot de passe"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="input input-bordered w-full"
+          required
+        />
+        <button className="btn btn-primary w-full">Réinitialiser</button>
+        {message && <p className="text-center mt-2">{message}</p>}
+      </form>
+    </Suspense>
   );
 }
