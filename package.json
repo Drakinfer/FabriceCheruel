@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "prisma generate && next build",
+    "build": "npm run db:init && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:init": "prisma generate && prisma migrate deploy"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
