@@ -42,7 +42,7 @@ export default function Footer() {
               <li>
                 Email :
                 <a href="mailto:contact@monsite.com" className="link">
-                  contact@monsite.com
+                  fabrice.cheruel@gmail.com
                 </a>
               </li>
               <li>

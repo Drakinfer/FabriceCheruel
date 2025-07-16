@@ -4,9 +4,9 @@ import ProtectedImage from './ProtectedImage';
 
 export default function HomeSection1({ onScrollDown }) {
   return (
-    <section className="w-full h-full flex items-center justify-center relative px-6 sm:px-12">
-      <div className="h-full flex flex-col md:flex-row w-full max-w-7xl items-center justify-between gap-24">
-        <div className="relative w-full md:w-1/2 md:aspect-auto overflow-hidden rounded">
+    <section className="w-full min-h-[calc(100vh+3rem)] md:min-h-0 flex items-center justify-center relative px-6 sm:px-12">
+      <div className="h-full flex flex-col md:flex-row w-full max-w-7xl items-center justify-between md:gap-24 gap-6">
+        <div className="relative w-full md:w-1/2 md:aspect-auto md:overflow-hidden rounded mt-1">
           <ProtectedImage
             src="/accueil.jpg"
             alt="Fabrice Cheruel"
@@ -16,7 +16,7 @@ export default function HomeSection1({ onScrollDown }) {
         </div>
 
         {/* Texte */}
-        <div className="w-full md:w-1/2 text-left leading-relaxed">
+        <div className="w-full md:w-1/2 text-left leading-relaxed pb-20 md:pb-0">
           <p>
             <span className="font-bold">
               Atelier artistique – Dessins – Sculptures-vitraux

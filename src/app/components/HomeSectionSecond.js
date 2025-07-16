@@ -27,9 +27,9 @@ export default function HomeSection2({ onScrollUp }) {
       </button>
       <h2 className="pt-15 text-3xl font-semibold">Ma dernière création</h2>
       {product && (
-        <div className="flex flex-col md:flex-row items-center justify-between gap-16 max-w-6xl w-full h-full">
+        <div className="flex flex-col md:flex-row items-center md:justify-between md:gap-16 max-w-6xl w-full h-full">
           {/* Colonne image + texte */}
-          <div className="flex flex-col justify-center h-full items-center gap-4 w-full md:w-2/3">
+          <div className="flex flex-col justify-center md:h-full items-center gap-4 w-full md:w-2/3">
             <Link href={`galerie/${product.id}`} className="w-full">
               <div className="relative w-full aspect-[4/3] max-w-md border border-black rounded overflow-hidden">
                 <ProtectedImage
